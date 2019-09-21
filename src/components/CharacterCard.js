@@ -1,18 +1,14 @@
 import React from "react";
 
 function CharacterCard(props) {
-	const charData = props.charData;
+	const { image, name, status, species } = props.character;
+	console.log("character card", props);
 	return (
 		<div>
-			{charData.map(character => {
-				return (
-					<div>
-						<h1>{character.name}</h1>
-						<p>{character.status}</p>
-						<p>{character.species}</p>
-					</div>
-				);
-			})}
+			<img src={image} alt={name} />
+			<h1>{name}</h1>
+			<p>{status}</p>
+			<p>{species}</p>
 		</div>
 	);
 }

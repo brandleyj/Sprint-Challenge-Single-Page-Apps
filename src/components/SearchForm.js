@@ -5,15 +5,15 @@ function SearchForm({ onSearch }) {
 		name: ""
 	});
 
-	const handleInputChange = e => {
-		setFindName({ ...findName, name: event.target.value });
+	const handleOnChange = e => {
+		setFindName({ ...findName, name: e.target.value });
 	};
 
 	return (
 		<section className="search-form">
 			<form onSubmit={() => onSearch(findName)}>
 				<input
-					onChange={handleInputChange}
+					onChange={handleOnChange}
 					placeholder="Name"
 					value={findName.name}
 					name="name"
