@@ -1,15 +1,21 @@
 import React from "react";
+import styled from "styled-components";
+
+const Card = styled.div`
+	margin: 40px;
+	max-width: 300px;
+`;
 
 function CharacterCard(props) {
 	const { image, name, status, species } = props.character;
 	console.log("character card", props);
 	return (
-		<div>
+		<Card>
 			<img src={image} alt={name} />
 			<h1>{name}</h1>
-			<p>{status}</p>
-			<p>{species}</p>
-		</div>
+			<p>Status: {status}</p>
+			<p>Species: {species}</p>
+		</Card>
 	);
 }
 

@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 import SearchForm from "./SearchForm";
+import styled from "styled-components";
+
+const Cards = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+`;
 
 function CharacterList(props) {
 	const [characters, setCharacters] = useState([]);
@@ -19,11 +26,11 @@ function CharacterList(props) {
 	}, []);
 	console.log("characters test", characters);
 	return (
-		<div>
+		<Cards>
 			{characters.map(character => (
 				<CharacterCard key={character.id} character={character} />
 			))}
-		</div>
+		</Cards>
 	);
 }
 export default CharacterList;
